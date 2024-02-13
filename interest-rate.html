@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="data" placeholder="enter amount">
+        <input type="text" id="interest" placeholder="enter interest rate per year">
+        <div id="output"></div>
+        <button onclick="printvalue()">Interest of year</button>
+        <button onclick="printvalue1()">Interest of month</button>
+        <button onclick="msg()">setTimeout</button>       
+<input type="button" onclick="msg()" value="setTimeout">
+    </form>
+
+
+    <script>
+        function printvalue() {
+            event.preventDefault();
+            let value = document.getElementById("data").value;
+            let interestrate = document.getElementById("interest").value;
+            let value1 = Number(value);
+            let interestrate1 = Number(interestrate);
+            let interest = value / 100 * interestrate1;
+            let final = Number(value) + Number(interest);
+            document.getElementById("output").innerHTML = "<h1>" + "simple interest = " + interest + "</h1><br>" + "amount after a year is " + final;
+    }
+        function printvalue1() {
+            var v = prompt("Who are you?");
+            if(v=='Deepak'){
+            event.preventDefault();
+            let value = document.getElementById("data").value;
+            let interestrate = document.getElementById("interest").value;
+            let value1 = Number(value);
+            let interestrate1 = Number(interestrate);
+            let interest = value / 100 * interestrate1;
+            interest = interest / 12;
+            let final = Number(value) + Number(interest);
+            document.getElementById("output").innerHTML = "<h1>" + "simple interest = " + interest + "</h1><br>" + "amount after a month is " + final;
+        }
+        else{
+            alert(v+" is wrong password");
+        }
+        }
+
+        function msg() {
+            setTimeout(
+                function(){
+                     alert("Welcome after 1 seconds")
+                    
+                }, 1000);
+
+        }
+        
+    </script>
+</body>
+
+</html>
